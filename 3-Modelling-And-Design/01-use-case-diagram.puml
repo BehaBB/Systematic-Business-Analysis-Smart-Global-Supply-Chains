@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+
+actor "Rural Patient" as Patient
+actor "Traditional Healer" as Healer
+actor "District Doctor" as Doctor
+
+rectangle "Telemedicine Platform" {
+  usecase "Bilingual Consultation" as UC1
+  usecase "Traditional Advice" as UC2
+  usecase "Low-bandwidth Video" as UC3
+}
+
+Patient --> UC1
+Patient --> UC3
+Healer --> UC2
+Doctor --> UC1
+@enduml
