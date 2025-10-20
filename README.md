@@ -1,5 +1,5 @@
 # SystematicBusinessAnalysis
-P# NB |  System Analyst Portfolio
+# NB |  System Analyst Portfolio
 
 ## 🎯 Professional Portfolio
 
