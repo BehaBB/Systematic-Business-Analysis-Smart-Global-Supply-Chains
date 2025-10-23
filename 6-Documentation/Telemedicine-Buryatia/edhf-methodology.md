@@ -225,7 +225,6 @@ The framework's success in Buryatia provides a replicable model for other indige
 
 ---
 **Framework Version**: 1.0  
-**Development Lead**: Natalia Bobrova  
+**Development Lead**: Natalia B.  
 **Cultural Validation**: Buryat Traditional Healer Council  
 **Implementation Partner**: Buryatia Republic Health Ministry  
-**Contact**: behabobrova@gmail.com
