@@ -1,0 +1,306 @@
+openapi: 3.0.0
+info:
+  title: Buryatia Telemedicine Platform API
+  description: API for culturally-adaptive telemedicine platform integrating modern and traditional medicine
+  version: 1.0.0
+  contact:
+    name: Buryatia Health Ministry
+    email: telemedicine@buryatia-health.ru
+
+servers:
+  - url: https://api.telemedicine.buryatia.ru/v1
+    description: Production server
+  - url: https://api-staging.telemedicine.buryatia.ru/v1
+    description: Staging server
+
+tags:
+  - name: Patients
+    description: Patient registration and management
+  - name: Consultations
+    description: Teleconsultation scheduling and management
+  - name: Traditional Medicine
+    description: Traditional knowledge and treatment integration
+  - name: Multilingual
+    description: Language and cultural content management
+
+paths:
+  # Patient Management Endpoints
+  /patients:
+    post:
+      tags: [Patients]
+      summary: Register new patient
+      description: Register a patient with cultural and language preferences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: "Баир"
+                last_name:
+                  type: string
+                  example: "Дамдинов"
+                date_of_birth:
+                  type: string
+                  format: date
+                  example: "1965-03-15"
+                ethnicity:
+                  type: string
+                  enum: [buryat, russian, mixed, other]
+                  example: "buryat"
+                preferred_language:
+                  type: string
+                  enum: [buryat, russian]
+                  example: "buryat"
+                phone_number:
+                  type: string
+                  example: "+79140505620"
+                settlement_type:
+                  type: string
+                  enum: [urban, rural, remote_settlement, nomadic]
+                  example: "rural"
+                traditional_medicine_acceptance:
+                  type: integer
+                  minimum: 1
+                  maximum: 5
+                  example: 4
+              required:
+                - first_name
+                - last_name
+                - preferred_language
+                - phone_number
+      responses:
+        '201':
+          description: Patient registered successfully
+        '400':
+          description: Invalid input data
+
+  /patients/{patient_id}/language:
+    patch:
+      tags: [Patients]
+      summary: Update patient language preference
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                preferred_language:
+                  type: string
+                  enum: [buryat, russian]
+                  example: "buryat"
+      responses:
+        '200':
+          description: Language preference updated
+
+  # Consultation Endpoints
+  /consultations:
+    post:
+      tags: [Consultations]
+      summary: Schedule new consultation
+      description: Schedule a teleconsultation with optional traditional healer involvement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patient_id:
+                  type: string
+                  format: uuid
+                provider_id:
+                  type: string
+                  format: uuid
+                healer_id:
+                  type: string
+                  format: uuid
+                  nullable: true
+                consultation_type:
+                  type: string
+                  enum: [video, audio, chat]
+                  example: "video"
+                preferred_language:
+                  type: string
+                  enum: [buryat, russian]
+                symptoms:
+                  type: array
+                  items:
+                    type: string
+                include_traditional_options:
+                  type: boolean
+                  example: true
+              required:
+                - patient_id
+                - provider_id
+                - consultation_type
+                - preferred_language
+      responses:
+        '201':
+          description: Consultation scheduled successfully
+
+  # Traditional Medicine Endpoints
+  /traditional-treatments:
+    get:
+      tags: [Traditional Medicine]
+      summary: Search traditional treatments
+      description: Search traditional treatments by symptoms, plants, or local names
+      parameters:
+        - name: symptoms
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+        - name: plant_name
+          in: query
+          schema:
+            type: string
+        - name: language
+          in: query
+          schema:
+            type: string
+            enum: [buryat, russian]
+            default: "russian"
+        - name: region
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Traditional treatments found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TraditionalTreatment'
+
+  /treatment-compatibility:
+    post:
+      tags: [Traditional Medicine]
+      summary: Check treatment compatibility
+      description: Check compatibility between modern and traditional treatments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modern_treatment:
+                  type: string
+                traditional_treatment_id:
+                  type: string
+                  format: uuid
+                patient_profile:
+                  type: object
+                  properties:
+                    age:
+                      type: integer
+                    ethnicity:
+                      type: string
+                    existing_conditions:
+                      type: array
+                      items:
+                        type: string
+      responses:
+        '200':
+          description: Compatibility analysis completed
+
+  # Multilingual Endpoints
+  /translate/medical-term:
+    post:
+      tags: [Multilingual]
+      summary: Translate medical terminology
+      description: Translate medical terms between Russian and Buryat with cultural context
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                term:
+                  type: string
+                source_language:
+                  type: string
+                  enum: [russian, buryat]
+                target_language:
+                  type: string
+                  enum: [russian, buryat]
+                context:
+                  type: string
+                  example: "prescription_instructions"
+      responses:
+        '200':
+          description: Translation successful
+
+components:
+  schemas:
+    Patient:
+      type: object
+      properties:
+        patient_id:
+          type: string
+          format: uuid
+        first_name:
+          type: string
+        last_name:
+          type: string
+        preferred_language:
+          type: string
+          enum: [buryat, russian]
+        ethnicity:
+          type: string
+        traditional_medicine_acceptance:
+          type: integer
+          minimum: 1
+          maximum: 5
+
+    TraditionalTreatment:
+      type: object
+      properties:
+        treatment_id:
+          type: string
+          format: uuid
+        buryat_name:
+          type: string
+        russian_name:
+          type: string
+        treatment_type:
+          type: string
+        preparation_method:
+          type: string
+        compatibility_level:
+          type: integer
+        cultural_significance:
+          type: string
+
+  responses:
+    UnauthorizedError:
+      description: Authentication required
+    CulturalValidationError:
+      description: Content requires cultural validation
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - BearerAuth: []
