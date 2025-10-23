@@ -1,0 +1,181 @@
+@startuml
+' Stereotypes for better visualization
+skinparam groupInheritance 2
+
+package "Core Entities" {
+  entity "Patient" as patient {
+    + patient_id : UUID [PK]
+    --
+    * first_name : varchar(100)
+    * last_name : varchar(100)
+    * date_of_birth : date
+    * ethnicity : varchar(50)
+    * preferred_language : varchar(10)
+    * phone_number : varchar(20)
+    * settlement_type : varchar(20)
+    * connectivity_level : integer
+    * traditional_medicine_acceptance : integer
+    * emergency_contact : jsonb
+    * created_at : timestamp
+  }
+
+  entity "Healthcare Provider" as provider {
+    + provider_id : UUID [PK]
+    --
+    * first_name : varchar(100)
+    * last_name : varchar(100)
+    * provider_type : varchar(50)
+    * specialization : varchar(100)
+    * languages : varchar[] 
+    * medical_license : varchar(100)
+    * availability_schedule : jsonb
+    * is_verified : boolean
+  }
+
+  entity "Traditional Healer" as healer {
+    + healer_id : UUID [PK]
+    --
+    * traditional_name : varchar(100)
+    * healer_type : varchar(50)
+    * specialization : varchar(100)
+    * years_of_practice : integer
+    * region : varchar(100)
+    * cultural_validation_status : varchar(20)
+    * knowledge_contributions : integer
+  }
+}
+
+package "Medical Data" {
+  entity "Medical Record" as record {
+    + record_id : UUID [PK]
+    --
+    # patient_id : UUID [FK]
+    * record_type : varchar(50)
+    * condition : varchar(200)
+    * diagnosis_date : date
+    * severity : varchar(20)
+    * notes : text
+    * language : varchar(10)
+  }
+
+  entity "Consultation" as consultation {
+    + consultation_id : UUID [PK]
+    --
+    # patient_id : UUID [FK]
+    # provider_id : UUID [FK]
+    * consultation_date : timestamp
+    * consultation_type : varchar(20)
+    * duration : integer
+    * connection_quality : integer
+    * symptoms : jsonb
+    * notes : text
+    * follow_up_required : boolean
+  }
+
+  entity "Treatment Plan" as treatment {
+    + plan_id : UUID [PK]
+    --
+    # consultation_id : UUID [FK]
+    * plan_type : varchar(20)
+    * start_date : date
+    * end_date : date
+    * adherence_tracking : boolean
+    * outcomes : jsonb
+  }
+}
+
+package "Traditional Medicine" {
+  entity "Traditional Treatment" as trad_treatment {
+    + treatment_id : UUID [PK]
+    --
+    * buryat_name : varchar(200)
+    * russian_name : varchar(200)
+    * latin_name : varchar(200)
+    * treatment_type : varchar(50)
+    * preparation_method : text
+    * dosage_guidelines : jsonb
+    * contraindications : text
+    * regional_specificity : varchar(100)
+    * cultural_significance : text
+    * validation_status : varchar(20)
+  }
+
+  entity "Treatment Compatibility" as compatibility {
+    + compatibility_id : UUID [PK]
+    --
+    # modern_treatment_id : UUID [FK]
+    # traditional_treatment_id : UUID [FK]
+    * compatibility_level : integer
+    * interaction_notes : text
+    * research_references : jsonb
+    * cultural_acceptance : decimal
+  }
+
+  entity "Traditional Knowledge" as knowledge {
+    + knowledge_id : UUID [PK]
+    --
+    # healer_id : UUID [FK]
+    * knowledge_type : varchar(50)
+    * description : text
+    * cultural_context : text
+    * seasonal_applicability : varchar(100)
+    * ip_protection_level : varchar(20)
+    * sharing_consent : boolean
+  }
+}
+
+package "Multilingual Content" {
+  entity "Medical Terminology" as terminology {
+    + term_id : UUID [PK]
+    --
+    * russian_term : varchar(200)
+    * buryat_term : varchar(200)
+    * latin_term : varchar(200)
+    * term_category : varchar(100)
+    * cultural_notes : text
+    * validation_status : varchar(20)
+  }
+
+  entity "Content Translation" as translation {
+    + translation_id : UUID [PK]
+    --
+    * source_text : text
+    * target_language : varchar(10)
+    * translated_text : text
+    * context : varchar(200)
+    * cultural_validator : varchar(100)
+    * approval_date : date
+  }
+}
+
+' Relationships
+patient ||--o{ record : "has"
+patient ||--o{ consultation : "participates_in"
+provider ||--o{ consultation : "conducts"
+healer ||--o{ knowledge : "contributes"
+consultation ||--o| treatment : "results_in"
+
+trad_treatment }o--o{ compatibility : "evaluated_in"
+knowledge }|--|| trad_treatment : "describes"
+
+' Many-to-many relationships
+consultation }o--o{ healer : "involves"
+treatment }o--o{ trad_treatment : "includes"
+
+note right of patient
+  **Cultural Attributes:**
+  - Ethnicity tracking
+  - Language preference
+  - Traditional medicine acceptance
+  - Settlement type for connectivity
+end note
+
+note left of trad_treatment
+  **Traditional Medicine Features:**
+  - Bilingual naming
+  - Cultural significance
+  - Regional variations
+  - Validation process
+end note
+
+@enduml
