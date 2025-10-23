@@ -1,0 +1,87 @@
+@startuml
+!define BPMN
+!include <tupadr3/common>
+!include <tupadr3/font-awesome/users>
+!include <tupadr3/font-awesome/heart>
+!include <tupadr3/font-awesome/stethoscope>
+!include <tupadr3/font-awesome/mobile>
+
+title Buryatia Telemedicine - Patient Consultation Process
+
+start
+
+:Patient experiences\nhealth symptoms;
+note right
+  **Cultural Context:**
+  May consult family or
+  local healer first
+end note
+
+if (Use mobile app?) then (yes)
+  :Access telemedicine app\n(Buryat/Russian interface);
+  if (First time user?) then (yes)
+    :Bilingual registration\nwith cultural mediator support;
+  else (no)
+    :Login to existing account;
+  endif
+  
+  :Complete symptom checker\nwith traditional medicine options;
+  
+  if (Needs cultural mediator?) then (yes)
+    :Cultural mediator\nassists with consultation setup;
+  else (no)
+  endif
+  
+  :Schedule consultation\nwith available provider;
+  
+  if (Prefers traditional healer?) then (yes)
+    :Include traditional healer\nin consultation plan;
+  else (no)
+    :Schedule with\nmedical doctor only;
+  endif
+  
+else (no, use alternative)
+  :Visit local health point\nor cultural mediator;
+  :Assisted registration\nand consultation booking;
+endif
+
+:Receive appointment confirmation\nand reminders in preferred language;
+
+:Low-bandwidth video consultation;
+note right
+  **Technical Adaptation:**
+  - Quality adjusts to connection
+  - Audio-only fallback available
+  - Offline message capability
+end note
+
+if (Integrated consultation?) then (yes)
+  :Medical doctor and\ntraditional healer collaboration;
+  :Discuss combined treatment\noptions;
+else (no)
+  :Medical doctor provides\ntreatment recommendations;
+endif
+
+:Create integrated treatment plan;
+note left
+  **Treatment Features:**
+  - Modern + traditional options
+  - Compatibility checking
+  - Cultural appropriateness
+  - Local availability
+end note
+
+:Provide bilingual instructions\nand follow-up plan;
+
+if (Chronic condition?) then (yes)
+  :Set up remote monitoring\nand regular follow-ups;
+  :Medication reminders\nin preferred language;
+else (no)
+  :Schedule follow-up\nif needed;
+endif
+
+:Continuous care coordination\nbetween providers;
+
+stop
+
+@enduml
