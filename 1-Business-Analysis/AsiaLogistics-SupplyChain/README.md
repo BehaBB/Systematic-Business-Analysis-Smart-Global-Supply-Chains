@@ -1,153 +1,143 @@
 # 🌉 Asia Logistics Smart Supply Chain
 
-> **Интеллектуальная платформа для китайско-российской логистики**  
-> *Цифровая трансформация цепочек поставок с 2022 года*
+> **Intelligent Platform for China-Russia Logistics**  
+> *Supply Chain Digital Transformation Since 2022*
 
-![GitHub last commit](https://img.shields.io/github/last-commit/BehaBB/SystematicBusinessAnalysis?label=Обновление)
-![GitHub repo size](https://img.shields.io/github/repo-size/BehaBB/SystematicBusinessAnalysis?label=Размер%20репозитория)
+![GitHub last commit](https://img.shields.io/github/last-commit/BehaBB/SystematicBusinessAnalysis?label=Update)
+![GitHub repo size](https://img.shields.io/github/repo-size/BehaBB/SystematicBusinessAnalysis?label=Repo%20Size)
 
-## 🏢 О компании Asia Logistics
+## 🏢 About Asia Logistics
 
-**Asia Logistics** — российская логистическая компания с китайскими инвестициями, специализирующаяся на оптимизации цепочек поставок между Китаем и регионами России.
+**Asia Logistics** is a Russian logistics company with Chinese investments, specializing in optimizing supply chains between China and Russian regions.
 
-**Основные направления деятельности:**
-- 🚛 Международные перевозки Китай-Россия
-- 📦 Таможенное оформление и сертификация
-- 🏭 Складская логистика в приграничных регионах
-- 🔗 Интеграционные решения для китайского бизнеса в РФ
+**Core Business Areas:**
+- 🚛 International Transportation China-Russia
+- 📦 Customs Clearance and Certification
+- 🏭 Warehouse Logistics in Border Regions
+- 🔗 Integration Solutions for Chinese Business in Russia
 
-**География операций:**
-- **Китай:** Харбин, Маньчжурия, Шанхай
-- **Россия:** Бурятия, Иркутская область, Забайкальский край
-- **Логистические хабы:** Улан-Удэ, Кяхта, Иркутск
+**Operational Geography:**
+- **China:** Harbin, Manzhouli, Shanghai
+- **Russia:** Buryatia, Irkutsk Region, Zabaykalsky Krai
+- **Logistics Hubs:** Ulan-Ude, Kyakhta, Irkutsk
 
-## 💡 Проблема и решение
+## 💡 Problem and Solution
 
-### Ключевые вызовы:
-- ⏱️ Длительное таможенное оформление в Кяхтинском переходе
-- 📄 Мультиязычный документооборот (китайский/русский)
-- 🗺️ Сложная логистика в условиях сурового климата
-- 💰 Валютные расчеты в условиях ограничений
-- 🔍 Низкая прозрачность цепочек поставок
+### Key Challenges:
+- ⏱️ Lengthy Customs Clearance at Kyakhta Crossing
+- 📄 Multilingual Documentation (Chinese/Russian)
+- 🗺️ Complex Logistics in Harsh Climate Conditions
+- 💰 Currency Settlements Under Restrictions
+- 🔍 Low Supply Chain Transparency
 
-### Наше решение:
-Объединяем **блокчейн** для прозрачности, **AI** для оптимизации и **IoT** для отслеживания в реальном времени.
+### Our Solution:
+Combining **blockchain** for transparency, **AI** for optimization, and **IoT** for real-time tracking.
 
-## ⚙️ Технологический стек
+## ⚙️ Technology Stack
 
-### Блокчейн:
-- **Сеть:** Hyperledger Fabric (приватная)
-- **Смарт-контракты:** Go/JavaScript
-- **Оракулы:** Chainlink для внешних данных
+### Blockchain:
+- **Network:** Hyperledger Fabric (private)
+- **Smart Contracts:** Go/JavaScript
+- **Oracles:** Chainlink for External Data
 
-### ИИ/МЛ:
-- **Фреймворки:** Python, PyTorch, Scikit-learn
-- **Задачи:** Прогнозирование спроса, оптимизация маршрутов, анализ рисков
+### AI/ML:
+- **Frameworks:** Python, PyTorch, Scikit-learn
+- **Tasks:** Demand forecasting, route optimization, risk analysis
 
-### Бэкенд:
-- **Язык:** Python + FastAPI
-- **Базы данных:** PostgreSQL, Redis
-- **Брокер сообщений:** RabbitMQ
+### Backend:
+- **Language:** Python + FastAPI
+- **Databases:** PostgreSQL, Redis
+- **Message Broker:** RabbitMQ
 
-### Фронтенд:
-- **Фреймворк:** Vue.js + TypeScript
-- **Визуализация:** D3.js, Chart.js
+### Frontend:
+- **Framework:** Vue.js + TypeScript
+- **Visualization:** D3.js, Chart.js
 
-### Инфраструктура:
-- **Контейнеризация:** Docker + Kubernetes
-- **Облака:** Yandex Cloud, Alibaba Cloud
+### Infrastructure:
+- **Containerization:** Docker + Kubernetes
+- **Clouds:** Yandex Cloud, Alibaba Cloud
 
-## 🚦 Статус разработки
+## 🚦 Development Status
 
-| Версия | Статус | Период | Готовность |
-|--------|--------|--------|------------|
-| **v0.1** | ✅ Завершено | 2022 Q2 | 100% |
-| **v0.5** | ✅ Завершено | 2022 Q4 | 100% |
+| Version | Status | Period | Completion |
+|---------|--------|--------|------------|
+| **v0.1** | ✅ Completed | 2022 Q2 | 100% |
+| **v0.5** | ✅ Completed | 2022 Q4 | 100% |
 | **v1.0** | ✅ Production | 2023 Q1 | 100% |
 | **v1.5** | 🟡 Release Candidate | 2023 Q4 | 95% |
-| **v2.0** | 🔵 В разработке | 2024 Q1 | 65% |
+| **v2.0** | 🔵 In Development | 2024 Q1 | 65% |
 
 ## 🗓 Roadmap 2024-2025
 
-### 🟢 Завершено (2022-2023)
-- [x] Блокчейн-трекинг грузов
-- [x] Двуязычный интерфейс
-- [x] Интеграция с китайскими ERP
+### 🟢 Completed (2022-2023)
+- [x] Blockchain cargo tracking
+- [x] Bilingual interface
+- [x] Integration with Chinese ERP systems
 
-### 🟡 В процессе (2023-2024)
-- [ ] AI-таможенный ассистент (95%)
-- [ ] Модуль валютных расчетов (70%)
-- [ ] Мобильное приложение (45%)
+### 🟡 In Progress (2023-2024)
+- [ ] AI customs assistant (95%)
+- [ ] Currency settlement module (70%)
+- [ ] Mobile application (45%)
 
-### 🔵 Планируется (2024-2025)
-- [ ] IoT-трекинг температуры
-- [ ] Интеграция с российскими банками
-- [ ] Система репутации поставщиков
+### 🔵 Planned (2024-2025)
+- [ ] IoT temperature tracking
+- [ ] Integration with Russian banks
+- [ ] Supplier reputation system
 
-## 📁 Структура проекта
+## 📁 Project Structure
 asia-logistics-platform/
-├── 📁 blockchain/ # Смарт-контракты и конфиги сети
-├── 📁 ai-ml/ # Модели машинного обучения
-├── 📁 backend/ # FastAPI бэкенд
-├── 📁 frontend/ # Vue.js дашборд
-├── 📁 mobile/ # Мобильное приложение
-├── 📁 iot/ # IoT сенсоры и симуляторы
-├── 📁 docs/ # Документация
-└── 📁 deployment/ # Docker и Kubernetes конфиги
+├── 📁 blockchain/ # Smart contracts and network configs
+├── 📁 ai-ml/ # Machine learning models
+├── 📁 backend/ # FastAPI backend
+├── 📁 frontend/ # Vue.js dashboard
+├── 📁 mobile/ # Mobile application
+├── 📁 iot/ # IoT sensors and simulators
+├── 📁 docs/ # Documentation
+└── 📁 deployment/ # Docker and Kubernetes configs
 
-text
+## 🚀 Quick Start
 
-## 🚀 Быстрый старт
-
-### Предварительные требования:
+### Prerequisites:
 ```bash
 docker --version    # Docker 20+
 docker-compose --version
 python --version    # Python 3.9+
-Локальный запуск:
-bash
-# 1. Клонирование репозитория
+Local Development:
+# 1. Clone repository
 git clone https://github.com/BehaBB/SystematicBusinessAnalysis.git
 cd SystematicBusinessAnalysis/1-Business-Analysis/AsiaLogistics-SupplyChain
 
-# 2. Запуск блокчейн сети
+# 2. Start blockchain network
 cd blockchain
 docker-compose up -d
 
-# 3. Запуск бэкенда
+# 3. Start backend
 cd ../backend
 pip install -r requirements.txt
 python main.py
 
-# 4. Запуск фронтенда
+# 4. Start frontend
 cd ../frontend
 npm install
 npm run dev
-🤝 Участие в разработке
-Мы приветствуем контрибуции! Особенно востребованы:
+🤝 Contributing
+We welcome contributions! Especially needed:
 
-🌐 Русско-китайские переводы интерфейса
+🌐 Russian-Chinese interface translations
+🔗 Integrations with Russian government systems
+🤖 AI/ML models for logistics
+📱 Mobile application development
 
-🔗 Интеграции с российскими гос. системами
+Process:
+Fork the repository
 
-🤖 AI/ML модели для логистики
+Create feature branch (git checkout -b feature/amazing-feature)
 
-📱 Разработка мобильных приложений
+Commit changes (git commit -m 'Add amazing feature')
 
-Процесс:
-Форкните репозиторий
+Push to branch (git push origin feature/amazing-feature)
 
-Создайте feature ветку (git checkout -b feature/amazing-feature)
+Open Pull Request
 
-Закоммитьте изменения (git commit -m 'Add amazing feature')
-
-Запушьте в ветку (git push origin feature/amazing-feature)
-
-Откройте Pull Request
-
-
-
-📜 Лицензия
-Этот проект распространяется под лицензией Apache 2.0.
-
-Asia Logistics - С 2022 года строим цифровой мост между Китаем и Россией
+📜 License
+This project is licensed under the Apache 2.0 License.
