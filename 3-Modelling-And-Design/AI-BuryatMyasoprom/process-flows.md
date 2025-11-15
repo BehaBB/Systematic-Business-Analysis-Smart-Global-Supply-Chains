@@ -56,6 +56,7 @@ graph TB
     C -->|No| E[Send Alert]
     E --> F[Escalate if Critical]
     F --> G[Log Corrective Action]
+```
 Integration Points
 1C:Enterprise: Order data, inventory levels
 
