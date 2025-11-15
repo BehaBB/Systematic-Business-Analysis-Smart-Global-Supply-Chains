@@ -40,7 +40,7 @@ text
 
 ### Customs Document Automation Flow
 
-%% Order Processing Flow
+```mermaid
 graph LR
     A[Order Created] --> B[Product Data Extraction]
     B --> C[Regulation Validation]
@@ -50,7 +50,6 @@ graph LR
     F --> G[API Submission]
     G --> H[Status Monitoring]
 
-%% Quality Monitoring Flow
 graph TB
     A[IoT Sensor Data] --> B[Real-time Processing]
     B --> C{Temperature OK?}
@@ -58,6 +57,7 @@ graph TB
     C -->|No| E[Send Alert]
     E --> F[Escalate if Critical]
     F --> G[Log Corrective Action]
+```
 Integration Points
 1C:Enterprise: Order data, inventory levels
 
