@@ -5,7 +5,7 @@
 - **Location**: Ulan-Ude, Republic of Buryatia, Russia
 - **Industry**: Meat processing and export
 - **Established**: 1978
-- **Employees**: 240
+- **Employees**: 380
 - **Annual Revenue**: $18M
 - **Export Markets**: China (60%), Mongolia (15%), Domestic (25%)
 
