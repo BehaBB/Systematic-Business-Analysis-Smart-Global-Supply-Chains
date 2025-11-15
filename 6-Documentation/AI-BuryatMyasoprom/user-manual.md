@@ -20,18 +20,43 @@ text
 ### Dashboard Overview
 
 #### Main Dashboard Components
-┌─────────────────────────────────────────────────────┐
-│ Header: User info, Notifications, Logout │
-├─────────────────────────────────────────────────────┤
-│ Quick Actions: New Order, Generate Docs, Track │
-├─────────────────────────────────────────────────────┤
-│ Metrics: Orders Today, Compliance Rate, Alerts │
-├─────────────────────────────────────────────────────┤
-│ Recent Orders: Status, Actions, Timeline │
-├─────────────────────────────────────────────────────┤
-│ Compliance Alerts: Temperature, Documents, Dates │
-└─────────────────────────────────────────────────────┘
+```mermaid
+%% Dashboard Layout – AI BuryatMyasoprom Control Center
+graph TB
+    subgraph Header [ ]
+        H1[👤 User Info]:::header
+        H2[🔔 Notifications]:::header
+        H3[🚪 Logout]:::header
+    end
+    subgraph QuickActions [ ]
+        QA1[➕ New Order]:::action
+        QA2[📄 Generate Docs]:::action
+        QA3[🚚 Track Shipment]:::action
+    end
+    subgraph Metrics [ ]
+        M1[Orders Today<br/>147]:::good
+        M2[Compliance Rate<br/>98.7%]:::good
+        M3[Active Alerts<br/>2]:::warn
+    end
+    subgraph RecentOrders [ ]
+        RO[Recent Orders<br/>→ Status │ Actions │ Timeline]:::table
+    end
+    subgraph Alerts [ ]
+        A1[❄️ Temperature Deviation #1124]:::alert
+        A2[📋 Missing Halal Cert #1109]:::alert
+        A3[⏰ Expiry Date Warning #1130]:::warn
+    end
 
+    %% Layout
+    Header --> QuickActions --> Metrics --> RecentOrders --> Alerts
+
+    classDef header fill:#2d3748, color:#e2e8f0, stroke:#4a5568
+    classDef action fill:#3182ce, color:#fff, stroke:#2c5282, font-weight:bold
+    classDef good fill:#48bb78, color:#fff, stroke:#38a169
+    classDef warn fill:#ed8936, color:#fff, stroke:#dd6b20
+    classDef alert fill:#e53e3e, color:#fff, stroke:#c53030
+    classDef table fill:#f7fafc, color:#2d3748, stroke:#e2e8f0, stroke-dasharray: 5 5
+```
 text
 
 ### Order Management
