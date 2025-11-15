@@ -1,0 +1,42 @@
+{
+  "quality_checks_examples": [
+    {
+      "batch_id": "BATCH-2024-001",
+      "product_type": "SMOKED_OMUL",
+      "check_type": "RAW_MATERIAL",
+      "inspector_id": "QC-001",
+      "parameters": {
+        "appearance_score": 9.0,
+        "texture_score": 8.5,
+        "smell_score": 9.5,
+        "bacterial_count": 800
+      },
+      "expected_score": 92.5,
+      "expected_status": "PASSED"
+    },
+    {
+      "batch_id": "BATCH-2024-002", 
+      "product_type": "FROZEN_SIG",
+      "check_type": "FINAL_PRODUCT",
+      "inspector_id": "QC-002",
+      "parameters": {
+        "appearance_score": 7.5,
+        "texture_score": 8.0,
+        "temperature": -19.5,
+        "ice_crystal_size": 0.3
+      },
+      "expected_score": 85.0,
+      "expected_status": "PASSED"
+    }
+  ],
+  "quality_alerts": [
+    {
+      "batch_id": "BATCH-2024-003",
+      "check_type": "FINAL_PRODUCT",
+      "failed_parameter": "bacterial_count",
+      "actual_value": 1500,
+      "limit_max": 1000,
+      "severity": "HIGH"
+    }
+  ]
+}
