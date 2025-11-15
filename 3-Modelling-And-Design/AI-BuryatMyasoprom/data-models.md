@@ -1,4 +1,4 @@
-## 🎯 **Creating: `3-Modelling-And-Design/AI-BuryatMyasoprom/data-models.md`**
+## 🎯 **Creating Data Models: AI BuryatMyasoprom**
 
 ```markdown
 # Data Models: AI BuryatMyasoprom
