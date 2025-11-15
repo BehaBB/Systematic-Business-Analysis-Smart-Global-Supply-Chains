@@ -1,4 +1,4 @@
-## 🎯 **Creating Data Models: AI BuryatMyasoprom**
+# Data Models: AI BuryatMyasoprom**
 
 ```markdown
 # Data Models: AI BuryatMyasoprom
