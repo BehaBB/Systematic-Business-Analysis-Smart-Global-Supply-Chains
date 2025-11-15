@@ -1,0 +1,140 @@
+{
+  "orders": [
+    {
+      "order_id": "BO-2024-001",
+      "customer": {
+        "name": "China Meat Import Co.",
+        "address": "Beijing, China",
+        "import_license": "CN-IMPORT-2024-001"
+      },
+      "products": [
+        {
+          "product_id": "BEEF-001",
+          "description": "Frozen Beef Carcass Grade A",
+          "meat_type": "BEEF",
+          "quantity_kg": 5000,
+          "unit_price_usd": 5.50,
+          "production_date": "2024-01-15",
+          "expiry_date": "2025-01-15",
+          "storage_temperature": -18,
+          "quality_grade": "A",
+          "organic_certified": false,
+          "halal_certified": true,
+          "veterinary_inspection": "APPROVED",
+          "lab_tests": ["salmonella", "e_coli", "antibiotics"]
+        }
+      ],
+      "shipment": {
+        "port_of_export": "Zabaikalsk",
+        "port_of_entry": "Manzhouli",
+        "transport_method": "REFRIGERATED_TRUCK",
+        "expected_departure": "2024-01-20",
+        "expected_arrival": "2024-01-25",
+        "insurance_value": 1500,
+        "freight_cost": 2000
+      },
+      "documents_required": [
+        "health_certificate",
+        "customs_declaration",
+        "certificate_of_origin",
+        "veterinary_certificate",
+        "quality_inspection_certificate",
+        "halal_certificate"
+      ]
+    },
+    {
+      "order_id": "BO-2024-002",
+      "customer": {
+        "name": "Shanghai Food Distributors",
+        "address": "Shanghai, China",
+        "import_license": "CN-IMPORT-2024-002"
+      },
+      "products": [
+        {
+          "product_id": "LAMB-001",
+          "description": "Frozen Lamb Carcass Grade B",
+          "meat_type": "LAMB",
+          "quantity_kg": 3000,
+          "unit_price_usd": 6.80,
+          "production_date": "2024-01-10",
+          "expiry_date": "2024-07-10",
+          "storage_temperature": -17,
+          "quality_grade": "B",
+          "organic_certified": true,
+          "halal_certified": false,
+          "veterinary_inspection": "APPROVED",
+          "lab_tests": ["salmonella", "listeria", "heavy_metals"]
+        }
+      ],
+      "shipment": {
+        "port_of_export": "Zabaikalsk",
+        "port_of_entry": "Suifenhe",
+        "transport_method": "REFRIGERATED_CONTAINER",
+        "expected_departure": "2024-01-22",
+        "expected_arrival": "2024-01-28",
+        "insurance_value": 1200,
+        "freight_cost": 2500
+      },
+      "documents_required": [
+        "health_certificate",
+        "customs_declaration",
+        "certificate_of_origin",
+        "veterinary_certificate",
+        "quality_inspection_certificate",
+        "organic_certificate"
+      ]
+    },
+    {
+      "order_id": "BO-2024-003",
+      "customer": {
+        "name": "Guangzhou Meat Market",
+        "address": "Guangzhou, China",
+        "import_license": "CN-IMPORT-2024-003"
+      },
+      "products": [
+        {
+          "product_id": "HORSE-001",
+          "description": "Frozen Horse Meat Grade A",
+          "meat_type": "HORSE",
+          "quantity_kg": 2000,
+          "unit_price_usd": 4.20,
+          "production_date": "2024-01-12",
+          "expiry_date": "2025-01-12",
+          "storage_temperature": -19,
+          "quality_grade": "A",
+          "organic_certified": false,
+          "halal_certified": true,
+          "veterinary_inspection": "APPROVED",
+          "lab_tests": ["salmonella", "e_coli", "veterinary_drugs"]
+        }
+      ],
+      "shipment": {
+        "port_of_export": "Zabaikalsk",
+        "port_of_entry": "Dalian",
+        "transport_method": "REFRIGERATED_TRUCK",
+        "expected_departure": "2024-01-18",
+        "expected_arrival": "2024-01-24",
+        "insurance_value": 800,
+        "freight_cost": 1800
+      },
+      "documents_required": [
+        "health_certificate",
+        "customs_declaration",
+        "certificate_of_origin",
+        "veterinary_certificate",
+        "quality_inspection_certificate",
+        "halal_certificate"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_orders": 3,
+    "total_quantity_kg": 10000,
+    "total_value_usd": 58400,
+    "export_date_range": {
+      "start": "2024-01-18",
+      "end": "2024-01-25"
+    },
+    "generated_date": "2024-01-15T10:00:00Z"
+  }
+}
