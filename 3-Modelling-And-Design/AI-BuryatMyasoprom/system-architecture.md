@@ -1,4 +1,4 @@
- System Architecture: AI BuryatMyasoprom
+ # System Architecture: AI BuryatMyasoprom
 
 ## High-Level Architecture Overview
 ┌─────────────────┐ ┌──────────────────┐ ┌─────────────────┐
