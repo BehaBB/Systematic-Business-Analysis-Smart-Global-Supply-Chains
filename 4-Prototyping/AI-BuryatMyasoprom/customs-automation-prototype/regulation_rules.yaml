@@ -1,0 +1,204 @@
+# China Import Regulation Rules for Meat Products
+# Last Updated: 2024-01-15
+
+china_import_regulations:
+  meat_products:
+    general_requirements:
+      allowed_meat_types:
+        - "beef"
+        - "lamb" 
+        - "horse"
+        - "poultry"
+      banned_categories:
+        - "meat_from_quarantine_zones"
+        - "meat_with_growth_hormones"
+        - "meat_with_antibiotic_residues_above_limit"
+        - "meat_from_diseased_animals"
+    
+    temperature_control:
+      frozen_meat:
+        beef:
+          min_temperature: -18
+          max_temperature: -15
+          monitoring_frequency: "continuous"
+        lamb:
+          min_temperature: -18  
+          max_temperature: -15
+          monitoring_frequency: "continuous"
+        horse:
+          min_temperature: -20
+          max_temperature: -18
+          monitoring_frequency: "continuous"
+      chilled_meat:
+        min_temperature: 0
+        max_temperature: 4
+        shelf_life_days: 7
+    
+    documentation_requirements:
+      mandatory_documents:
+        health_certificate:
+          validity_period: "30_days"
+          issued_by: "official_veterinary_authority"
+          required_fields:
+            - "exporter_information"
+            - "product_description"
+            - "production_date"
+            - "expiry_date"
+            - "storage_conditions"
+            - "veterinary_inspection_details"
+        
+        veterinary_certificate:
+          purpose: "animal_health_verification"
+          required_tests:
+            - "salmonella"
+            - "e_coli"
+            - "listeria"
+        
+        certificate_of_origin:
+          verification: "chamber_of_commerce"
+          required_information:
+            - "manufacturer_address"
+            - "production_facility"
+            - "origin_criteria"
+        
+        customs_declaration:
+          submission_method: "electronic"
+          required_fields:
+            - "hs_code"
+            - "product_value"
+            - "quantity"
+            - "insurance"
+            - "freight_costs"
+      
+      conditional_documents:
+        organic_certificate:
+          trigger: "organic_products"
+          issuing_body: "accredited_organic_certifier"
+          validity: "1_year"
+        
+        halal_certificate:
+          trigger: "halal_products" 
+          issuing_body: "recognized_islamic_authority"
+          requirements:
+            - "slaughter_method"
+            - "blessing_procedure"
+            - "processing_conditions"
+        
+        quality_grade_certificate:
+          trigger: "premium_grade_products"
+          grading_scale: "A_B_C"
+          issued_by: "quality_control_department"
+    
+    labeling_requirements:
+      languages:
+        primary: "chinese"
+        secondary: "russian"
+        font_requirements:
+          chinese: "simplified_chinese"
+          minimum_size: "4mm"
+          contrast: "high_visibility"
+      
+      mandatory_information:
+        - "product_name_chinese_russian"
+        - "net_weight_kg"
+        - "production_date"
+        - "expiry_date"
+        - "storage_temperature_range"
+        - "importer_name_address_china"
+        - "exporter_name_address_russia"
+        - "country_of_origin"
+        - "batch_number"
+        - "quality_grade"
+      
+      packaging_requirements:
+        material: "food_grade"
+        durability: "withstand_freezing"
+        traceability: "qr_code_required"
+    
+    testing_requirements:
+      microbiological_tests:
+        frequency: "each_production_batch"
+        parameters:
+          total_bacterial_count:
+            limit: "100000_cfu_g"
+          salmonella:
+            limit: "absent_in_25g"
+          listeria_monocytogenes:
+            limit: "absent_in_25g"
+          e_coli:
+            limit: "100_cfu_g"
+      
+      chemical_tests:
+        frequency: "quarterly"
+        parameters:
+          antibiotic_residues:
+            tetracycline: "0.1_ppm"
+            penicillin: "0.01_ppm"
+          heavy_metals:
+            lead: "0.1_ppm"
+            cadmium: "0.05_ppm"
+            mercury: "0.05_ppm"
+          veterinary_drug_residues:
+            testing_scope: "comprehensive_screening"
+    
+    customs_procedures:
+      pre_approval:
+        required: true
+        processing_time: "3-5_business_days"
+        documents_submission: "electronic_portal"
+      
+      inspection_protocol:
+        random_inspection_rate: "10%"
+        targeted_inspection_triggers:
+          - "new_exporter"
+          - "previous_violations"
+          - "sensitive_product_category"
+        
+        inspection_focus:
+          - "document_verification"
+          - "temperature_compliance"
+          - "labeling_check"
+          - "physical_sample_testing"
+      
+      clearance_timeline:
+        normal_clearance: "2-3_days"
+        with_inspection: "5-7_days"
+        rejection_appeal: "10_business_days"
+
+compliance_monitoring:
+  record_keeping:
+    duration: "3_years"
+    format: "electronic_records_required"
+    accessibility: "available_for_inspection"
+  
+  audit_requirements:
+    frequency: "annual_compliance_audit"
+    scope: "full_supply_chain_verification"
+    reporting: "audit_report_to_customs"
+  
+  violation_penalties:
+    minor_violations:
+      - "documentation_errors"
+      - "labeling_issues"
+      penalty: "corrective_action_required"
+    
+    major_violations:
+      - "temperature_breach"
+      - "missing_mandatory_documents"
+      - "failed_lab_tests"
+      penalty: "shipment_rejection_import_suspension"
+    
+    critical_violations:
+      - "banned_products"
+      - "fraudulent_documents"
+      - "health_safety_risks"
+      penalty: "permanent_import_ban_legal_action"
+
+version_control:
+  current_version: "2.1"
+  effective_date: "2024-01-01"
+  last_updated: "2024-01-15"
+  change_log:
+    - "2024-01-01: Updated temperature requirements for horse meat"
+    - "2023-12-15: Added new microbiological test parameters"
+    - "2023-11-20: Enhanced labeling language requirements"
