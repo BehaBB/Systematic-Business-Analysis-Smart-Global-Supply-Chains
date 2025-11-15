@@ -87,7 +87,7 @@ graph TB
     H -->|Approved| I[Proceed with Shipment]
     H -->|Rejected| J[Address Rejection]
     J --> F
-Integration Points
+### Integration Points
 1C:Enterprise: Order data, inventory levels
 
 Chinese Customs: Document submission, status checks
@@ -98,22 +98,22 @@ Payment Systems: Multi-currency transaction processing
 
 Logistics Partners: Shipment tracking, delivery updates
 
-Performance Metrics per Process
-Customs Documentation
+## Performance Metrics per Process
+### Customs Documentation
 Current: 5 days manual processing
 
 Target: 8 hours automated processing
 
 Accuracy: 95% → 99.9%
 
-Quality Monitoring
+### Quality Monitoring
 Current: Periodic manual checks
 
 Target: Real-time continuous monitoring
 
 Issue Detection: 24 hours → 5 minutes
 
-Supply Chain Tracking
+### Supply Chain Tracking
 Current: Limited visibility after shipment
 
 Target: End-to-end real-time tracking
