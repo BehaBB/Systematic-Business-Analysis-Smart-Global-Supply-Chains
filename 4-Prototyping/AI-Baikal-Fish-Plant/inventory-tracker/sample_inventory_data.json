@@ -1,0 +1,208 @@
+{
+  "current_inventory": [
+    {
+      "item_id": "RAW-OMUL-001",
+      "item_type": "RAW_MATERIAL",
+      "description": "Fresh Omul Fish - Premium Grade",
+      "quantity_kg": 300.0,
+      "unit": "kg",
+      "location": "COLD_ROOM_A",
+      "batch_id": "CATCH-2024-001",
+      "supplier": "Baikal Fishermen Co-op",
+      "received_date": "2024-01-15T06:00:00Z",
+      "expiry_date": "2024-01-18T18:00:00Z",
+      "quality_grade": "EXCELLENT",
+      "storage_temperature": -1.5,
+      "shelf_life_days": 3
+    },
+    {
+      "item_id": "RAW-SIG-001",
+      "item_type": "RAW_MATERIAL", 
+      "description": "Fresh Sig Fish - Standard Grade",
+      "quantity_kg": 400.0,
+      "unit": "kg",
+      "location": "COLD_ROOM_B",
+      "batch_id": "CATCH-2024-002",
+      "supplier": "Northern Catch Ltd",
+      "received_date": "2024-01-15T07:30:00Z",
+      "expiry_date": "2024-01-17T12:00:00Z",
+      "quality_grade": "GOOD",
+      "storage_temperature": -2.0,
+      "shelf_life_days": 2
+    },
+    {
+      "item_id": "RAW-GRAYLING-001",
+      "item_type": "RAW_MATERIAL",
+      "description": "Fresh Grayling Fish - Premium Grade", 
+      "quantity_kg": 200.0,
+      "unit": "kg",
+      "location": "COLD_ROOM_A",
+      "batch_id": "CATCH-2024-003",
+      "supplier": "Mountain Stream Fisheries",
+      "received_date": "2024-01-14T16:00:00Z",
+      "expiry_date": "2024-01-18T08:00:00Z",
+      "quality_grade": "EXCELLENT",
+      "storage_temperature": -1.0,
+      "shelf_life_days": 4
+    },
+    {
+      "item_id": "FIN-SMOKED-OMUL-001",
+      "item_type": "FINISHED_GOOD",
+      "description": "Smoked Omul - Cold Smoked",
+      "quantity_kg": 150.0,
+      "unit": "kg", 
+      "location": "FINISHED_GOODS_WAREHOUSE",
+      "batch_id": "BATCH-2024-001",
+      "production_date": "2024-01-15T16:00:00Z",
+      "expiry_date": "2024-03-15T16:00:00Z",
+      "quality_grade": "A",
+      "storage_temperature": 4.0,
+      "shelf_life_months": 2
+    },
+    {
+      "item_id": "FIN-FROZEN-SIG-001",
+      "item_type": "FINISHED_GOOD",
+      "description": "Frozen Sig Fillets - IQF",
+      "quantity_kg": 280.0,
+      "unit": "kg",
+      "location": "FREEZER_STORAGE",
+      "batch_id": "BATCH-2024-002", 
+      "production_date": "2024-01-14T14:00:00Z",
+      "expiry_date": "2025-01-14T14:00:00Z",
+      "quality_grade": "A",
+      "storage_temperature": -20.0,
+      "shelf_life_months": 12
+    },
+    {
+      "item_id": "FIN-DRIED-GRAYLING-001",
+      "item_type": "FINISHED_GOOD",
+      "description": "Dried Grayling - Traditional Method",
+      "quantity_kg": 120.0,
+      "unit": "kg",
+      "location": "DRY_STORAGE",
+      "batch_id": "BATCH-2024-003",
+      "production_date": "2024-01-13T10:00:00Z", 
+      "expiry_date": "2024-04-13T10:00:00Z",
+      "quality_grade": "B",
+      "storage_temperature": 18.0,
+      "shelf_life_months": 3
+    }
+  ],
+  "inventory_movements": [
+    {
+      "movement_id": "MOV-20240115-001",
+      "item_id": "RAW-OMUL-001",
+      "movement_type": "RECEIPT",
+      "quantity_kg": 300.0,
+      "reference_id": "DELIVERY-20240115-001",
+      "location": "COLD_ROOM_A",
+      "movement_time": "2024-01-15T06:00:00Z",
+      "notes": "Initial receipt from Baikal Fishermen Co-op"
+    },
+    {
+      "movement_id": "MOV-20240115-002", 
+      "item_id": "RAW-OMUL-001",
+      "movement_type": "CONSUMPTION",
+      "quantity_kg": 250.0,
+      "reference_id": "BATCH-2024-001",
+      "location": "PROCESSING_LINE",
+      "movement_time": "2024-01-15T08:30:00Z",
+      "notes": "Raw material for smoked omul production"
+    },
+    {
+      "movement_id": "MOV-20240115-003",
+      "item_id": "FIN-SMOKED-OMUL-001", 
+      "movement_type": "PRODUCTION",
+      "quantity_kg": 200.0,
+      "reference_id": "BATCH-2024-001",
+      "location": "FINISHED_GOODS_WAREHOUSE",
+      "movement_time": "2024-01-15T16:00:00Z",
+      "notes": "Finished smoked omul from batch 2024-001"
+    },
+    {
+      "movement_id": "MOV-20240116-001",
+      "item_id": "FIN-SMOKED-OMUL-001",
+      "movement_type": "CONSUMPTION", 
+      "quantity_kg": 50.0,
+      "reference_id": "ORDER-20240116-001",
+      "location": "SHIPPING_DOCK",
+      "movement_time": "2024-01-16T09:00:00Z",
+      "notes": "Customer order fulfillment - Premium Fish Distributors"
+    }
+  ],
+  "yield_calculations": [
+    {
+      "batch_id": "BATCH-2024-001",
+      "product_type": "SMOKED_OMUL",
+      "raw_material_consumed_kg": 250.0,
+      "finished_product_produced_kg": 200.0,
+      "actual_yield_percent": 80.0,
+      "expected_yield_percent": 80.0,
+      "variance_percent": 0.0,
+      "loss_kg": 50.0,
+      "loss_categories": {
+        "trimming": 15.0,
+        "moisture": 25.0, 
+        "packaging": 10.0
+      }
+    },
+    {
+      "batch_id": "BATCH-2024-002",
+      "product_type": "FROZEN_SIG", 
+      "raw_material_consumed_kg": 330.0,
+      "finished_product_produced_kg": 300.0,
+      "actual_yield_percent": 90.9,
+      "expected_yield_percent": 91.0,
+      "variance_percent": -0.1,
+      "loss_kg": 30.0,
+      "loss_categories": {
+        "glazing": 20.0,
+        "packaging": 10.0
+      }
+    }
+  ],
+  "inventory_alerts": [
+    {
+      "alert_id": "LOW-STOCK-001",
+      "item_id": "RAW-OMUL-001", 
+      "alert_type": "LOW_STOCK",
+      "current_quantity": 50.0,
+      "threshold_quantity": 100.0,
+      "severity": "MEDIUM",
+      "recommendation": "Schedule additional raw material delivery",
+      "generated_time": "2024-01-16T10:00:00Z"
+    },
+    {
+      "alert_id": "EXPIRY-ALERT-001",
+      "item_id": "RAW-SIG-001",
+      "alert_type": "NEAR_EXPIRY", 
+      "expiry_date": "2024-01-17T12:00:00Z",
+      "days_until_expiry": 1,
+      "severity": "HIGH",
+      "recommendation": "Prioritize processing of this batch",
+      "generated_time": "2024-01-16T08:00:00Z"
+    }
+  ],
+  "inventory_settings": {
+    "low_stock_thresholds": {
+      "RAW_MATERIAL": 100.0,
+      "FINISHED_GOOD": 50.0,
+      "PACKAGING": 200.0
+    },
+    "expiry_alert_days": 2,
+    "default_yield_expectations": {
+      "SMOKED_OMUL": 80.0,
+      "FROZEN_SIG": 91.0, 
+      "DRIED_GRAYLING": 83.0,
+      "SMOKED_SIG": 82.0
+    },
+    "storage_locations": [
+      "COLD_ROOM_A",
+      "COLD_ROOM_B", 
+      "FREEZER_STORAGE",
+      "FINISHED_GOODS_WAREHOUSE",
+      "DRY_STORAGE",
+      "SHIPPING_DOCK"
+    ]
+  }
+}
