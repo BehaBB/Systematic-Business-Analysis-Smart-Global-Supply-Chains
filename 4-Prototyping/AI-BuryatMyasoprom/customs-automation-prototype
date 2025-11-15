@@ -1,0 +1,20 @@
+4-Prototyping/AI-BuryatMyasoprom/
+└── customs-automation-prototype/
+    ├── README.md
+    ├── src/
+    │   ├── document_generator.py
+    │   ├── regulation_parser.py
+    │   ├── china_customs_client.py
+    │   └── templates/
+    │       ├── health_certificate.json
+    │       ├── customs_declaration.json
+    │       └── certificate_of_origin.json
+    ├── tests/
+    │   ├── test_document_generation.py
+    │   └── test_customs_integration.py
+    ├── data/
+    │   ├── sample_orders.json
+    │   └── regulation_rules.yaml
+    └── docs/
+        ├── api_specification.md
+        └── implementation_guide.md
