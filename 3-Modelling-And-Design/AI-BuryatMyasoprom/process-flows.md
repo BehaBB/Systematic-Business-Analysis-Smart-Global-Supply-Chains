@@ -39,7 +39,6 @@ text
 ## Key Process Flow Details
 
 ### Customs Document Automation Flow
-
 ```mermaid
 graph LR
     A[Order Created] --> B[Product Data Extraction]
@@ -49,7 +48,10 @@ graph LR
     E --> F[Quality Assurance Check]
     F --> G[API Submission]
     G --> H[Status Monitoring]
+```
+### Quality Monitoring Flow
 
+```mermaid
 graph TB
     A[IoT Sensor Data] --> B[Real-time Processing]
     B --> C{Temperature OK?}
@@ -58,6 +60,33 @@ graph TB
     E --> F[Escalate if Critical]
     F --> G[Log Corrective Action]
 ```
+### End-to-End Supply Chain Flow
+**Description**: Complete visibility from farm production to Chinese retail stores.
+
+```mermaid
+graph LR
+    A[Farm Production] --> B[Processing Plant]
+    B --> C[Quality Inspection]
+    C --> D[Packaging & Labeling]
+    D --> E[Cold Storage]
+    E --> F[Transport to Border]
+    F --> G[Customs Clearance]
+    G --> H[Chinese Distribution]
+    H --> I[Retail Stores]
+```
+### Document Approval Workflow
+graph TB
+    A[Document Generated] --> B{Automated Validation}
+    B -->|Pass| C[Submit to Customs]
+    B -->|Fail| D[Flag Issues]
+    D --> E[Manual Review]
+    E --> F[Corrections Made]
+    F --> B
+    C --> G[Track Status]
+    G --> H{Customs Response}
+    H -->|Approved| I[Proceed with Shipment]
+    H -->|Rejected| J[Address Rejection]
+    J --> F
 Integration Points
 1C:Enterprise: Order data, inventory levels
 
@@ -67,4 +96,27 @@ IoT Sensors: Temperature, humidity, location data
 
 Payment Systems: Multi-currency transaction processing
 
+Logistics Partners: Shipment tracking, delivery updates
+
+Performance Metrics per Process
+Customs Documentation
+Current: 5 days manual processing
+
+Target: 8 hours automated processing
+
+Accuracy: 95% → 99.9%
+
+Quality Monitoring
+Current: Periodic manual checks
+
+Target: Real-time continuous monitoring
+
+Issue Detection: 24 hours → 5 minutes
+
+Supply Chain Tracking
+Current: Limited visibility after shipment
+
+Target: End-to-end real-time tracking
+
+Data Availability: 50% → 95%
 text
