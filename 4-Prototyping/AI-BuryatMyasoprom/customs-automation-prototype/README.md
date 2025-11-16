@@ -65,7 +65,7 @@ Key Components
 1. Document Generator
 Generates 25+ required customs documents
 
-Supports multiple document types:
+Supported Document Types:
 
 Health Certificates
 
@@ -109,14 +109,11 @@ Regulation Updates: Automatic updates from Chinese authorities
 Audit Trail: Complete documentation history
 
 Performance Metrics
-Processing Time: 5 days → 8 hours (85% reduction)
-
-Error Rate: 15% → 0.1% (99.3% improvement)
-
-Document Accuracy: 95% → 99.9%
-
-ROI: 145% within 18 months
-
+Metric	Before	After	Improvement
+Processing Time	5 days	8 hours	85% reduction
+Error Rate	15%	0.1%	99.3% improvement
+Document Accuracy	95%	99.9%	-
+ROI	-	145%	Within 18 months
 Testing
 bash
 # Run basic tests
